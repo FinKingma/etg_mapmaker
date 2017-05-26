@@ -18,7 +18,6 @@ describe('goal', function() {
                 assert.notEqual(result, false);
                 done();
             });
-
         });
 
         it('should return false with no working paths', function (done) {

@@ -15,6 +15,7 @@ dependencies:
 
 test:
   override:
+    - gem list | grep rake
     - npm run mocha
 #    - npm run fitnesse
     - npm run pact

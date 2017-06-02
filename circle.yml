@@ -1,6 +1,8 @@
 machine:
   node:
     version: 4.6.0
+  #ruby:
+   # version: 2.0.0-p643
   services:
     - docker
   environment:
@@ -12,9 +14,9 @@ dependencies:
   override:
     - npm install
     - cd node_modules/pact-consumer-js-dsl/ && bundle install
-    - rvm install ruby-2.0.0-p643
-    - rvm --default use 2.0.0
-    - ruby -v
+    - cd node_modules/pact-consumer-js-dsl/ && gem list | grep rake
+    - cd node_modules/pact-consumer-js-dsl/ && bundle show | grep rake
+    - bundle show | grep rake
 
 test:
   override:

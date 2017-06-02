@@ -6,3 +6,4 @@
 pacts/contracts/*
 reports/*
 log/*
+node_modules/*

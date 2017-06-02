@@ -4,6 +4,10 @@ machine:
   services:
     - docker
 
+dependencies:
+  override:
+    - bundle install:
+
 test:
   pre:
     - aws configure set default.region us-east-1

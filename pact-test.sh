@@ -1,1 +1,1 @@
-PROVIDER=MapMakerApi PACTBROKERURL=$pactbrokerurl node pacts.js
+PROVIDER=MapMakerApi node pacts.js

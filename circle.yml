@@ -12,6 +12,9 @@ dependencies:
   override:
     - npm install
     - cd node_modules/pact-consumer-js-dsl/ && bundle install
+    - rvm install ruby-2.0.0-p643
+    - rvm --default use 2.0.0
+    - ruby -v
 
 test:
   override:

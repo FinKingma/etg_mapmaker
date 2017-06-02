@@ -5,33 +5,9 @@ const chaiAsPromised = require('chai-as-promised')
 const expect = chai.expect
 chai.use(chaiAsPromised)
 const server = require('../app.js')
-const importData = require('../app.js')
-const animalRepository = require('../app.js')
-
-// Append some extra endpoints to mutate current state of the API
-server.get('/states', (req, res) => {
-  res.json({
-    "Matching Service": ['Has some animals', 'Has no animals', 'Has an animal with ID 1']
-  })
-})
-
-server.post('/setup', (req, res) => {
-  const state = req.body.state
-
-  animalRepository.clear()
-  switch (state) {
-    case 'Has no animals':
-      // do nothing
-      break
-    default:
-      importData()
-  }
-
-  res.end()
-})
 
 server.listen(3000, () => {
-  console.log('Animal Profile Service listening on http://localhost:3000')
+  console.log('MapMaker Api listening on http://localhost:3000')
 })
 
 // Verify that the provider meets all consumer expectations
@@ -42,8 +18,8 @@ describe('Pact Verification', () => {
     var opts = {
       provider: 'MapMakerApi',
       providerBaseUrl: 'http://localhost:3000',
-      providerStatesUrl: 'http://localhost:3000/states',
-      providerStatesSetupUrl: 'http://localhost:3000/setup',
+      //providerStatesUrl: 'http://localhost:3000/states',
+      //providerStatesSetupUrl: 'http://localhost:3000/setup',
       // Fetch pacts from broker
       pactBrokerUrl: 'http://54.197.31.162:80',
       // Fetch from broker with given tags

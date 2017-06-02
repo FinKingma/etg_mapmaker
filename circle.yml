@@ -13,8 +13,8 @@ machine:
 dependencies:
   override:
     - npm install
-    - cd node_modules/pact-consumer-js-dsl/ && bundle install
-    - cd node_modules/pact-consumer-js-dsl/ && gem list | grep rake
+    - cd node_modules/pact-js-provider/ && bundle install
+    - cd node_modules/pact-js-provider/ && gem list | grep rake
 
 test:
   override:

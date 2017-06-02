@@ -23,7 +23,6 @@
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
-    "pact-consumer-js-dsl": "^0.2.2",
     "pact-js-provider": "^1.1.5",
     "request": "^2.72.0"
   }

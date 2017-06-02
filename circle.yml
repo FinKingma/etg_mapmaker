@@ -7,9 +7,7 @@ machine:
 dependencies:
   override:
     - npm install
-    - cd node_modules/pact-consumer-js-dsl/
-    - bundle install
-    - cd ../../
+    - cd node_modules/pact-consumer-js-dsl/ && bundle install
 
 test:
   pre:

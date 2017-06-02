@@ -1,1 +1,1 @@
-PROVIDER=MapMakerApi node pacts.js
+PROVIDER=MapMakerApi PACTBROKERURL='http://localhost:80' node pacts.js

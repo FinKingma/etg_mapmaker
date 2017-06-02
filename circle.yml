@@ -6,9 +6,7 @@ machine:
 
 test:
   pre:
-    - export PACTBROKERURL=http://localhost:80
-    - docker ps
-    - docker images
+    - export pactbrokerurl=http://localhost:80
   override:
     - npm run mocha
 #    - npm run fitnesse

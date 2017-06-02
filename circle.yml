@@ -6,7 +6,7 @@ machine:
 
 test:
   pre:
-    - export PACTBROKERURL=$(docker port pactbroker 8080/tcp)
+    - export PACTBROKERURL=http://localhost:80
     - docker ps
     - docker images
   override:

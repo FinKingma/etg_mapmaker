@@ -3,6 +3,10 @@ machine:
     version: 4.6.0
   services:
     - docker
+  environment:
+    pbport: null
+    pburl: null
+    pactbroker: null
 
 dependencies:
   override:

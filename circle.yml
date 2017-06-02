@@ -6,8 +6,9 @@ machine:
 
 test:
   pre:
+    - aws configure set default.region us-east-1
     - aws ecs describe-task-definition --task-definition pactbroker-family
-    - export pactbrokerurl=http://localhost:80
+    - export pactbrokerurl=http://54.197.31.162:80
   override:
     - npm run mocha
 #    - npm run fitnesse

@@ -14,11 +14,6 @@ dependencies:
     - cd node_modules/pact-consumer-js-dsl/ && bundle install
 
 test:
-  pre:
-    - aws configure set default.region us-east-1
-    - export pbport=$(aws ecs describe-task-definition --task-definition pactbroker-family --query 'taskDefinition.containerDefinitions[0].portMappings[0].hostPort')
-    - export pburl=$(aws ec2 describe-instances --instance-id i-0dc83ba1d1519c715 --query "Reservations[0].Instances[0].PublicIpAddress" | tr -d '"')
-    - export pactbrokerurl=http://$pburl:$pbport
   override:
     - npm run mocha
 #    - npm run fitnesse

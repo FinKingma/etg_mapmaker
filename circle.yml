@@ -6,6 +6,7 @@ machine:
 
 test:
   pre:
+    - aws ecs describe-task-definition --task-definition pactbroker-family
     - export pactbrokerurl=http://localhost:80
   override:
     - npm run mocha

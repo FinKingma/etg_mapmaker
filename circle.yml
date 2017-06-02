@@ -10,6 +10,12 @@ machine:
     pburl: null
     pactbroker: null
 
+dependencies:
+  override:
+    - npm install
+    - cd node_modules/pact-js-provider/ && npm install
+    #- cd node_modules/pact-js-provider/ && gem list | grep rake
+
 test:
   override:
     - gem list | grep rake

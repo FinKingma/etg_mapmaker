@@ -7,7 +7,7 @@ machine:
 test:
   pre:
     - aws configure set default.region us-east-1
-    - aws ecs describe-task-definition --task-definition pactbroker-family
+    - aws ecs describe-task-definition --task-definition pactbroker-family --query 'taskDefinition.containerDefinitions[0].portMappings[0].hostPort'
     - export pactbrokerurl=http://54.197.31.162:80
   override:
     - npm run mocha

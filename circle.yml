@@ -15,8 +15,6 @@ dependencies:
     - npm install
     - cd node_modules/pact-consumer-js-dsl/ && bundle install
     - cd node_modules/pact-consumer-js-dsl/ && gem list | grep rake
-    - cd node_modules/pact-consumer-js-dsl/ && bundle show | grep rake
-    - bundle show | grep rake
 
 test:
   override:

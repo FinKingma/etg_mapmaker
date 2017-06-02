@@ -7,17 +7,19 @@ machine:
 test:
   pre:
     - export PACTBROKERURL=$(docker port pactbroker 8080/tcp)
+    - docker ps
+    - docker images
   override:
     - npm run mocha
-    - npm run fitnesse
+#    - npm run fitnesse
     - npm run pact
-  post:
-    - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
-    - docker run -d -p 3000-4000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
-    - curl -sSf http://localhost:8080 > /dev/null
+#  post:
+#    - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
+#    - docker run -d -p 3000-4000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
+#    - curl -sSf http://localhost:8080 > /dev/null
 
-deployment:
-  prod:
-    branch: master
-    commands:
-      - ./deploy.sh
+#deployment:
+#  prod:
+#    branch: master
+#    commands:
+#      - ./deploy.sh

@@ -6,14 +6,8 @@ MAINTAINER Fin Kingma
 #installing Exploratory Testing Game in container
 RUN mkdir -p /usr/src/mm
 WORKDIR /usr/src/mm
-COPY package.json /usr/src/mm/
-RUN npm install
 COPY . /usr/src/mm
-
-RUN npm install -g mocha
-RUN npm run mocha
-
-RUN npm run pact
+RUN npm install
 
 EXPOSE 3000
 

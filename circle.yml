@@ -20,7 +20,8 @@ test:
   post:
     - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
     - docker run -d -p 3000-4000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
-    - curl -sSf http://localhost:8080 > /dev/null
+    - hostport=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "3000/tcp") 0).HostPort}}' mapmaker)
+    - curl -sSf http://localhost:$hostport > /dev/null
 
 deployment:
   prod:

@@ -18,6 +18,8 @@ test:
     - docker run -d -p 3000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
     #- hostport=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "3000/tcp") 0).HostPort}}' mapmaker)
     - curl -H 'bugs:4' -H 'features:20' -sSf http://localhost:3000/api/mapmaker > /dev/null
+    - docker stop pactbroker
+    - docker rm pactbroker
 
 deployment:
   prod:

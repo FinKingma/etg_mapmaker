@@ -20,14 +20,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "jasmine-core": "^2.4.1",
-    "karma": "^0.13.22",
-    "karma-chrome-launcher": "^1.0.1",
-    "karma-jasmine": "^1.0.2",
     "lodash": "^4.17.4",
     "mocha": "^3.4.2",
     "pact": "^2.5.0",
-    "pact-js-mocha": "^1.0.2-alpha",
-    "request": "^2.72.0"
+    "pact-js-mocha": "^1.0.2-alpha"
   }
 }

@@ -1,8 +1,6 @@
 machine:
   node:
     version: 4.6.0
-  #ruby:
-   # version: 2.0.0-p643
   services:
     - docker
   environment:
@@ -20,8 +18,8 @@ test:
   post:
     - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
     - docker run -d -p 3000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
-    - hostport=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "3000/tcp") 0).HostPort}}' mapmaker)
-    - curl -H 'bugs:4' -H 'features:20' -sSf http://localhost:$hostport/api/mapmaker > /dev/null
+    #- hostport=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "3000/tcp") 0).HostPort}}' mapmaker)
+    - curl -H 'bugs:4' -H 'features:20' -sSf http://localhost:3000/api/mapmaker > /dev/null
 
 deployment:
   prod:

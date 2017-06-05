@@ -4,7 +4,7 @@ machine:
   services:
     - docker
   environment:
-    pactbroker: null
+    PACTBROKERURL: 'http://54.197.31.162:80/'
 
 
 test:

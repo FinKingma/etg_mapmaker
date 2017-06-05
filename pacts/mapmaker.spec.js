@@ -5,6 +5,7 @@ const chaiAsPromised = require('chai-as-promised')
 const expect = chai.expect
 chai.use(chaiAsPromised)
 const server = require('../app.js')
+if (!process.env.PACTBROKERURL) throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL');
 
 server.listen(3000, () => {
   console.log('MapMaker Api listening on http://localhost:3000')
@@ -14,7 +15,6 @@ server.listen(3000, () => {
 describe('Pact Verification', () => {
   it('should validate the expectations of Matching Service', function () { // lexical binding required here
     this.timeout(10000)
-    if (!process.env.PACTBROKERURL) throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL');
 
     var opts = {
       provider: 'MapMakerApi',

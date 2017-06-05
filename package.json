@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "pact": "./run-pact.sh",
+    "pact": "./node_modules/.bin/mocha pacts/mapmaker.spec.js",
     "mocha": "mocha ./public/javascripts/*.spec.js ",
     "fitnesse": "cd fitnesse && ./runtest.sh"
   },

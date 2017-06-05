@@ -14,6 +14,7 @@ server.listen(3000, () => {
 describe('Pact Verification', () => {
   it('should validate the expectations of Matching Service', function () { // lexical binding required here
     this.timeout(10000)
+    if (!process.env.PACTBROKERURL) Throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL')
 
     var opts = {
       provider: 'MapMakerApi',
@@ -21,7 +22,7 @@ describe('Pact Verification', () => {
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
       // Fetch pacts from broker
-      pactBrokerUrl: 'http://54.197.31.162:80',
+      pactBrokerUrl: process.env.PACTBROKERURL,
       // Fetch from broker with given tags
       //tags: ['prod', 'sit5'],
       // Specific Remote pacts (doesn't need to be a broker)

@@ -14,7 +14,7 @@ server.listen(3000, () => {
 describe('Pact Verification', () => {
   it('should validate the expectations of Matching Service', function () { // lexical binding required here
     this.timeout(10000)
-    if (!process.env.PACTBROKERURL) Throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL')
+    if (!process.env.PACTBROKERURL) throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL');
 
     var opts = {
       provider: 'MapMakerApi',

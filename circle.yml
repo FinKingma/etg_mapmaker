@@ -4,7 +4,7 @@ machine:
   services:
     - docker
   environment:
-    PACTBROKERURL: 'http://54.197.31.162:80/'
+    PACTBROKERURL: 'http://etg-balancer-862594806.eu-central-1.elb.amazonaws.com:8000/'
 
 
 test:

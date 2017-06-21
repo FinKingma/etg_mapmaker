@@ -5,7 +5,7 @@ JQ="jq --raw-output --exit-status"
 
 configure_aws_cli(){
 	aws --version
-	aws configure set default.region us-east-1
+	aws configure set default.region eu-central-1
 	aws configure set default.output json
 }
 
@@ -42,14 +42,14 @@ make_task_def(){
 	task_template='[
 		{
 			"name": "mapmaker",
-			"image": "%s.dkr.ecr.us-east-1.amazonaws.com/mapmaker:%s",
+			"image": "%s.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:%s",
 			"essential": true,
 			"memory": 200,
 			"cpu": 10,
 			"portMappings": [
 				{
 					"containerPort": 3000,
-					"hostPort": 3000
+					"hostPort": 0
 				}
 			]
 		}
@@ -59,8 +59,8 @@ make_task_def(){
 }
 
 push_ecr_image(){
-	eval $(aws ecr get-login --region us-east-1)
-	docker push $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1
+	eval $(aws ecr get-login --region eu-central-1)
+	docker push $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:$CIRCLE_SHA1
 }
 
 register_definition() {

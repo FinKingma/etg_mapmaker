@@ -11,7 +11,7 @@ test:
   override:
     - gem list | grep rake
     - npm run mocha
-#    - npm run fitnesse
+    - npm run fitnesse
     - npm run pact
   post:
     - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .

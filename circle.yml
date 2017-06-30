@@ -8,8 +8,10 @@ machine:
 
 
 test:
-  override:
+  pre:
+    - npm install -g slimjs
     - gem list | grep rake
+  override:
     - npm run mocha
     - npm run fitnesse
     - npm run pact

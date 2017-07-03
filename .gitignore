@@ -7,4 +7,5 @@ pacts/contracts/*
 reports/*
 log/*
 node_modules/*
-fitnesse/FitNesseRoot/files/testResults/*
+fitnesse/FitNesseRoot/files/testResults/FrontPage/*
+npm-debug.log

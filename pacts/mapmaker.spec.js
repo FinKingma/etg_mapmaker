@@ -21,16 +21,8 @@ describe('Pact Verification', () => {
       providerBaseUrl: 'http://localhost:3000',
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
-      // Fetch pacts from broker
       pactBrokerUrl: process.env.PACTBROKERURL,
-      // Fetch from broker with given tags
-      //tags: ['prod', 'sit5'],
-      // Specific Remote pacts (doesn't need to be a broker)
-      // pactUrls: ['https://test.pact.dius.com.au/pacts/provider/Animal%20Profile%20Service/consumer/Matching%20Service/latest'],
-      // Local pacts
-      // pactUrls: [path.resolve(process.cwd(), './pacts/matching_service-animal_profile_service.json')],
-      //pactBrokerUsername: 'dXfltyFMgNOFZAxr8io9wJ37iUpY42M',
-      //pactBrokerPassword: 'O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1',
+      tags: ['prod',process.env.TAG],
       publishVerificationResult: true,
       providerVersion: "1.0.0"
     }

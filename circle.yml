@@ -5,6 +5,7 @@ machine:
     - docker
   environment:
     PACTBROKERURL: 'http://etg-balancer-862594806.eu-central-1.elb.amazonaws.com:8000/'
+    TAG: 'prod'
 
 
 test:

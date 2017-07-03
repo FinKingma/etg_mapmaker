@@ -16,8 +16,8 @@ test:
     - npm run fitnesse
     - npm run pact
   post:
-    - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
-    - docker run -d -p 3000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
+    - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
+    - docker run -d -p 3000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10
     - curl -H 'bugs:4' -H 'features:20' -sSf http://localhost:3000/api/mapmaker > /dev/null
 
 deployment:

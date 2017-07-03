@@ -20,6 +20,20 @@ deploy_cluster() {
         echo "Error updating service."
         return 1
     fi
+    
+    for attempt in {1..60}; do
+        if stale=$(aws ecs describe-services --cluster etg --services etg-mapmaker | \
+                       $JQ ".services[0].deployments | .[] | select(.taskDefinition != \"$revision\") | .taskDefinition"); then
+            echo "Waiting for stale deployments:"
+            echo "$stale"
+            sleep 10
+        else
+            echo "Deployed!"
+            return 0
+        fi
+    done
+    echo "Service update took too long."
+    return 1
 }
 
 make_task_def(){

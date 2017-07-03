@@ -19,10 +19,10 @@ describe('Pact Verification', () => {
     var opts = {
       provider: 'MapMakerApi',
       providerBaseUrl: 'http://localhost:3000',
+      pactBrokerUrl: process.env.PACTBROKERURL,
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
-      pactBrokerUrl: process.env.PACTBROKERURL,
-      tags: ['prod',process.env.TAG],
+      tags: ['prod'],
       publishVerificationResult: true,
       providerVersion: "1.0.0"
     }

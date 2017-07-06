@@ -14,17 +14,19 @@ server.listen(3000, () => {
 // Verify that the provider meets all consumer expectations
 describe('Pact Verification', () => {
   it('should validate the expectations of Matching Service', function () { // lexical binding required here
-    this.timeout(10000)
+    this.timeout(30000);
 
     var opts = {
       provider: 'MapMakerApi',
       providerBaseUrl: 'http://localhost:3000',
       pactBrokerUrl: process.env.PACTBROKERURL,
+      pactBrokerUsername: 'DPwCt3YC1WeNEX89vy4TAZbzoWkL5',
+      pactBrokerPassword: 'uUZJtUmyOnutSoErGzTrGAXqmHMoy',
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
       tags: ['prod'],
       publishVerificationResult: true,
-      providerVersion: "1.0.0"
+      providerVersion: "1.1.0"
     }
 
     return verifier.verifyProvider(opts)

@@ -4,7 +4,7 @@ machine:
   services:
     - docker
   environment:
-    PACTBROKERURL: 'http://etg-balancer-862594806.eu-central-1.elb.amazonaws.com:8000/'
+    PACTBROKERURL: 'https://xebia.pact.dius.com.au/'
     TAG: 'prod'
 
 

@@ -6,6 +6,7 @@ const expect = chai.expect
 chai.use(chaiAsPromised)
 const server = require('../app.js')
 if (!process.env.PACTBROKERURL) throw new Error('Please specify where the pactbroker can be found with PACTBROKERURL');
+var tag = process.env.TAG? process.env.TAG : '';
 
 server.listen(3000, () => {
   console.log('MapMaker Api listening on http://localhost:3000')
@@ -24,7 +25,7 @@ describe('Pact Verification', () => {
       pactBrokerPassword: 'uUZJtUmyOnutSoErGzTrGAXqmHMoy',
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
-      tags: ['prod'],
+      tags: [tag],
       publishVerificationResult: true,
       providerVersion: "1.1.0"
     }

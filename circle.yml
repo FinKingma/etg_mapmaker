@@ -16,6 +16,7 @@ test:
     - npm run mocha
     - npm run fitnesse
     - npm run pact
+    - npm run pact-prod
   post:
     - docker build -t $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:$CIRCLE_SHA1 .
     - docker run -d -p 3000:3000 --name mapmaker $AWS_ACCOUNT_ID.dkr.ecr.eu-central-1.amazonaws.com/mapmaker:$CIRCLE_SHA1; sleep 10

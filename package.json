@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "pact": "./node_modules/.bin/mocha pacts/mapmaker.spec.js",
+    "pact-prod": "env TAG=prod ./node_modules/.bin/mocha pacts/mapmaker.spec.js",
     "mocha": "mocha ./public/javascripts/*.spec.js ",
     "fitnesse": "cd fitnesse && ./runtest.sh"
   },

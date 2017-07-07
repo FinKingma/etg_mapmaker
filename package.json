@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "pact": "./node_modules/.bin/mocha pacts/mapmaker.spec.js",
-    "pact-prod": "env TAG=prod ./node_modules/.bin/mocha pacts/mapmaker.spec.js",
-    "mocha": "mocha ./public/javascripts/*.spec.js ",
+    "pact": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-results.xml ./node_modules/.bin/mocha pacts/mapmaker.spec.js --reporter mocha-junit-reporter",
+    "pact-prod": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-prod-results.xml env TAG=prod ./node_modules/.bin/mocha pacts/mapmaker.spec.js  --reporter mocha-junit-reporter",
+    "mocha": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/test-results.xml mocha ./public/javascripts/*.spec.js --reporter mocha-junit-reporter",
     "fitnesse": "cd fitnesse && ./runtest.sh"
   },
   "dependencies": {
@@ -15,6 +15,8 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "mocha": "^3.4.2",
+    "mocha-junit-reporter": "^1.13.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },

@@ -11,12 +11,12 @@ var maps = require('./routes/mapper');
 var app = express();
 
 var allowCrossDomain = function(req, res, next) {
- res.header('Access-Control-Allow-Origin', '*');
- res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
- res.header('Access-Control-Allow-Headers', ["bugs","features"]);
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', ["bugs","features"]);
 
- next();
- };
+  next();
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

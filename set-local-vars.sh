@@ -4,3 +4,4 @@ export PACTBROKERURL=https://xebia.pact.dius.com.au/
 export AWS_ACCOUNT_ID=636301108823
 export CIRCLE_SHA1=1234
 export TAG=dev
+export CIRCLE_TEST_REPORTS=temp

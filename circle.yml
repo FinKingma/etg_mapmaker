@@ -5,6 +5,7 @@ machine:
     - docker
   environment:
     PACTBROKERURL: 'https://xebia.pact.dius.com.au/'
+    TAG: 'prod'
 
 test:
   pre:

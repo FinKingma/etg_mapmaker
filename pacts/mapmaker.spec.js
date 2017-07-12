@@ -26,7 +26,7 @@ describe('Pact Verification', () => {
       //providerStatesUrl: 'http://localhost:3000/states',
       //providerStatesSetupUrl: 'http://localhost:3000/setup',
       tags: [pacttag],
-      publishVerificationResult: true,
+      publishVerificationResult: (process.env.TAG === 'prod'),
       providerVersion: "1.1.0"
     }
 

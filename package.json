@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "./gor.sh && node ./bin/www",
+    "start": "node ./bin/www",
     "pact": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-results.xml ./node_modules/.bin/mocha pacts/mapmaker.spec.js --reporter mocha-junit-reporter",
     "pact-prod": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-prod-results.xml env pacttag=prod ./node_modules/.bin/mocha pacts/mapmaker.spec.js  --reporter mocha-junit-reporter",
     "mocha": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/test-results.xml mocha ./public/javascripts/*.spec.js --reporter mocha-junit-reporter",
@@ -21,10 +21,8 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.83.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "cron": "^1.2.1",
     "lodash": "^4.17.4",
     "mocha": "^3.4.2",
     "pact": "^2.5.0",

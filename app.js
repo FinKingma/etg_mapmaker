@@ -4,13 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var backgroundTasks = require('./cronjob.js');
 
 var routes = require('./routes/index');
 var maps = require('./routes/mapper');
 
 var app = express();
-backgroundTasks.start();
 
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');

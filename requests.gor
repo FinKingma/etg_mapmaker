@@ -1,0 +1,40 @@
+1 113f561a06c66a5a49746ea9feb2747a275732f1 1499932720871971000
+GET /api/mapmaker HTTP/1.1
+Host: localhost:3000
+Connection: keep-alive
+Cache-Control: no-cache
+X-Postman-Interceptor-Id: fb95db10-52ae-d25d-ec34-31c7c3ca2744
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
+Postman-Token: 54359fd0-e9b0-6b87-8543-d557b6dff209
+Accept: */*
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-US,en;q=0.8
+Cookie: _ga=GA1.1.1109470146.1459928643; textwrapon=false; textautoformat=false; wysiwyg=textarea
+
+
+🐵🙈🙉
+2 113f561a06c66a5a49746ea9feb2747a275732f1 1499932720871971000 352870697
+HTTP/1.1 418 I'm a teapot
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,PUT,POST,DELETE
+Access-Control-Allow-Headers: bugs
+Access-Control-Allow-Headers: features
+Content-Type: text/html; charset=utf-8
+Content-Length: 1337
+ETag: W/"539-qXdAlPWMCk08wk963c+/mA"
+Date: Thu, 13 Jul 2017 07:58:40 GMT
+Connection: keep-alive
+
+<!DOCTYPE html><html><head><title></title><link rel="stylesheet" href="/stylesheets/style.css"></head><body><h1>provide features and bugs with values in header</h1><h2>418</h2><pre>Error: provide features and bugs with values in header
+    at /Users/finkingma/myProjects/etg_mapmaker/routes/mapper.js:45:15
+    at Layer.handle [as handle_request] (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/route.js:131:13)
+    at Route.dispatch (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/index.js:277:22
+    at Function.process_params (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/index.js:330:12)
+    at next (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/index.js:271:10)
+    at Function.handle (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/index.js:176:3)
+    at router (/Users/finkingma/myProjects/etg_mapmaker/node_modules/express/lib/router/index.js:46:12)</pre></body></html>
+🐵🙈🙉

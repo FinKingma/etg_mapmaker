@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "./gor.sh && node ./bin/www",
     "pact": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-results.xml ./node_modules/.bin/mocha pacts/mapmaker.spec.js --reporter mocha-junit-reporter",
     "pact-prod": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/pact-prod-results.xml env pacttag=prod ./node_modules/.bin/mocha pacts/mapmaker.spec.js  --reporter mocha-junit-reporter",
     "mocha": "MOCHA_FILE=$CIRCLE_TEST_REPORTS/junit/test-results.xml mocha ./public/javascripts/*.spec.js --reporter mocha-junit-reporter",

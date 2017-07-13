@@ -5,9 +5,9 @@ var s3 = new AWS.S3();
 var myBucket = 'etg-bucket';
 var myKey = 'requests.gor';
 
+getS3Stuff();
 var job  = new CronJob({
-    //cronTime: '00 30 11 * * 1-5',
-    cronTime: '* * * * * 1-5',
+    cronTime: '00 30 11 * * 1-5',
     onTick: function() {
         console.log('discovering goreplay file...');
         getGorFile(function(data) {
@@ -29,6 +29,13 @@ function getGorFile(callback) {
         if (err) console.log('no requests.gor file found yet');
         callback(data);
     });
+}
+
+function getS3Stuff() {
+    var s3 = new AWS.S3();
+    var params = {Bucket: myBucket, Key: myKey};
+    var file = require('fs').createWriteStream('./requests.gor');
+    s3.getObject(params).createReadStream().pipe(file);
 }
 
 function stuffS3With(data) {

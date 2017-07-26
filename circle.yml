@@ -26,3 +26,4 @@ deployment:
     branch: master
     commands:
       - ./deploy.sh
+      - curl -X POST https://circleci.com/api/v1.1/project/github/FinKingma/etg_e2e/tree/master?circle-token=67eb5218ceeb5094bf28a738072e00d3bc069642
